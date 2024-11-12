@@ -1,0 +1,11 @@
+/**Aqui tem as cores padrões do portal**/
+:root{
+     
+    --main-color: #0000FF;
+    --dark-color: #4F4F4F;
+    --light-color: #ffc27f;
+    --contrast-color: #4F4F4F;
+    --differential-color: #ffe29a;
+    --backg-color: #1b0bad;
+
+}

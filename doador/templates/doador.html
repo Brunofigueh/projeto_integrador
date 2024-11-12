@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'doador/css/doador.css' %}">
+{% endblock %}
+
+{% block 'dashboard' %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md card-dashboard">
+                <p class="text-card">Registrar Barulho</p>
+            </div>
+
+        </div><br>
+        <span id="message"></span>
+        <form action="{% url 'doador' %}" method="POST">{% csrf_token%}
+            <div class="row">
+                <div class="col-md"><input type="text" name="cep" id="cep" placeholder="CEP" class="form-control"><br></div>
+            
+            </div>
+            
+            <div class="row">
+                <div class="col-md"><input type="text" name="endereco" id="endereco" placeholder="Logradouro" class="form-control"><br></div>
+                <div class="col-md"><input type="text" name="numero" id="numero" placeholder="Número" class="form-control"><br></div>
+            </div>
+            <div class="row">
+                <div class="col-md"><input type="text" name="bairro" id="bairro" placeholder="Bairro" class="form-control"></div>
+                <div class="col-md"><input type="text" name="cidade" id="cidade" placeholder="Cidade" class="form-control"></div>
+                <div class="col-md"><input type="text" name="estado" id="estado" placeholder="Estado" class="form-control"></div>
+            </div><br>
+
+            <p class="text-card">Tipo de Barulho</p>
+            <div class="row">
+                <div class="col-md"><select name="tipo_barulho" id="tipo_barulho" class="form-control">
+                <option value=valor1>Veículo</option>
+                <option value=valor2>Som</option>
+                <option value=valor3>Fábrica</option>
+                </select></div>
+                <div class="col-md"><input type="submit" id="btnSend" value="Registrar Barulho" class="btn-add-carros"></div>
+            </div><br>
+
+        
+        </form>
+
+        </div>
+    </div>
+    <script src="{% static 'doador/js/doador.js' %}"></script>
+{% endblock %}
+
